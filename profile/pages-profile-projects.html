@@ -1,0 +1,1416 @@
+<!doctype html>
+
+<html
+  lang="en"
+  class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="assets/"
+  data-template="vertical-menu-template">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>User Profile - Projects | Vuexy - Bootstrap Admin Template</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
+      rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="assets/vendor/fonts/tabler-icons.css" />
+    <link rel="stylesheet" href="assets/vendor/fonts/flag-icons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="assets/vendor/libs/node-waves/node-waves.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/typeahead-js/typeahead.css" />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="assets/vendor/css/pages/page-profile.css" />
+
+    <!-- Helpers -->
+    <script src="assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="assets/vendor/js/template-customizer.js"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+     
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar">
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="ti ti-menu-2 ti-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item navbar-search-wrapper mb-0">
+                  <a class="nav-item nav-link search-toggler d-flex align-items-center px-0" href="javascript:void(0);">
+                    <i class="ti ti-search ti-md me-2"></i>
+                    <span class="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
+                  </a>
+                </div>
+              </div>
+              <!-- /Search -->
+
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!-- Language -->
+                <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="ti ti-language rounded-circle ti-md"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-language="en" data-text-direction="ltr">
+                        <span class="align-middle">English</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-language="fr" data-text-direction="ltr">
+                        <span class="align-middle">French</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-language="ar" data-text-direction="rtl">
+                        <span class="align-middle">Arabic</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-language="de" data-text-direction="ltr">
+                        <span class="align-middle">German</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ Language -->
+
+                <!-- Style Switcher -->
+                <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="ti ti-md"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
+                        <span class="align-middle"><i class="ti ti-sun me-2"></i>Light</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
+                        <span class="align-middle"><i class="ti ti-moon me-2"></i>Dark</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
+                        <span class="align-middle"><i class="ti ti-device-desktop me-2"></i>System</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- / Style Switcher-->
+
+                <!-- Quick links  -->
+                <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false">
+                    <i class="ti ti-layout-grid-add ti-md"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end py-0">
+                    <div class="dropdown-menu-header border-bottom">
+                      <div class="dropdown-header d-flex align-items-center py-3">
+                        <h5 class="text-body mb-0 me-auto">Shortcuts</h5>
+                        <a
+                          href="javascript:void(0)"
+                          class="dropdown-shortcuts-add text-body"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Add shortcuts"
+                          ><i class="ti ti-sm ti-apps"></i
+                        ></a>
+                      </div>
+                    </div>
+                    <div class="dropdown-shortcuts-list scrollable-container">
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-calendar fs-4"></i>
+                          </span>
+                          <a href="app-calendar.html" class="stretched-link">Calendar</a>
+                          <small class="text-muted mb-0">Appointments</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-file-invoice fs-4"></i>
+                          </span>
+                          <a href="app-invoice-list.html" class="stretched-link">Invoice App</a>
+                          <small class="text-muted mb-0">Manage Accounts</small>
+                        </div>
+                      </div>
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-users fs-4"></i>
+                          </span>
+                          <a href="app-user-list.html" class="stretched-link">User App</a>
+                          <small class="text-muted mb-0">Manage Users</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-lock fs-4"></i>
+                          </span>
+                          <a href="app-access-roles.html" class="stretched-link">Role Management</a>
+                          <small class="text-muted mb-0">Permission</small>
+                        </div>
+                      </div>
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-chart-bar fs-4"></i>
+                          </span>
+                          <a href="index.html" class="stretched-link">Dashboard</a>
+                          <small class="text-muted mb-0">User Profile</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-settings fs-4"></i>
+                          </span>
+                          <a href="pages-account-settings-account.html" class="stretched-link">Setting</a>
+                          <small class="text-muted mb-0">Account Settings</small>
+                        </div>
+                      </div>
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-help fs-4"></i>
+                          </span>
+                          <a href="pages-faq.html" class="stretched-link">FAQs</a>
+                          <small class="text-muted mb-0">FAQs & Articles</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-square fs-4"></i>
+                          </span>
+                          <a href="modal-examples.html" class="stretched-link">Modals</a>
+                          <small class="text-muted mb-0">Useful Popups</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Quick links -->
+
+                <!-- Notification -->
+                <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false">
+                    <i class="ti ti-bell ti-md"></i>
+                    <span class="badge bg-danger rounded-pill badge-notifications">5</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end py-0">
+                    <li class="dropdown-menu-header border-bottom">
+                      <div class="dropdown-header d-flex align-items-center py-3">
+                        <h5 class="text-body mb-0 me-auto">Notification</h5>
+                        <a
+                          href="javascript:void(0)"
+                          class="dropdown-notifications-all text-body"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Mark all as read"
+                          ><i class="ti ti-mail-opened fs-4"></i
+                        ></a>
+                      </div>
+                    </li>
+                    <li class="dropdown-notifications-list scrollable-container">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Congratulation Lettie 🎉</h6>
+                              <p class="mb-0">Won the monthly best seller gold badge</p>
+                              <small class="text-muted">1h ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-danger">CF</span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Charles Franklin</h6>
+                              <p class="mb-0">Accepted your connection</p>
+                              <small class="text-muted">12hr ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="assets/img/avatars/2.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">New Message ✉️</h6>
+                              <p class="mb-0">You have new message from Natalie</p>
+                              <small class="text-muted">1h ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-success"
+                                  ><i class="ti ti-shopping-cart"></i
+                                ></span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Whoo! You have new order 🛒</h6>
+                              <p class="mb-0">ACME Inc. made new order $1,154</p>
+                              <small class="text-muted">1 day ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="assets/img/avatars/9.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Application has been approved 🚀</h6>
+                              <p class="mb-0">Your ABC project application has been approved.</p>
+                              <small class="text-muted">2 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-success"
+                                  ><i class="ti ti-chart-pie"></i
+                                ></span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Monthly report is generated</h6>
+                              <p class="mb-0">July monthly financial report is generated</p>
+                              <small class="text-muted">3 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="assets/img/avatars/5.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Send connection request</h6>
+                              <p class="mb-0">Peter sent you connection request</p>
+                              <small class="text-muted">4 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="assets/img/avatars/6.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">New message from Jane</h6>
+                              <p class="mb-0">Your have new message from Jane</p>
+                              <small class="text-muted">5 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-warning"
+                                  ><i class="ti ti-alert-triangle"></i
+                                ></span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">CPU is running high</h6>
+                              <p class="mb-0">CPU Utilization Percent is currently at 88.63%,</p>
+                              <small class="text-muted">5 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-menu-footer border-top">
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item d-flex justify-content-center text-primary p-2 h-px-40 mb-1 align-items-center">
+                        View all notifications
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ Notification -->
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-medium d-block">John Doe</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="pages-profile-user.html">
+                        <i class="ti ti-user-check me-2 ti-sm"></i>
+                        <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
+                        <i class="ti ti-settings me-2 ti-sm"></i>
+                        <span class="align-middle">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="pages-account-settings-billing.html">
+                        <span class="d-flex align-items-center align-middle">
+                          <i class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"></i>
+                          <span class="flex-grow-1 align-middle">Billing</span>
+                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20"
+                            >2</span
+                          >
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="pages-faq.html">
+                        <i class="ti ti-help me-2 ti-sm"></i>
+                        <span class="align-middle">FAQ</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="pages-pricing.html">
+                        <i class="ti ti-currency-dollar me-2 ti-sm"></i>
+                        <span class="align-middle">Pricing</span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                        <i class="ti ti-logout me-2 ti-sm"></i>
+                        <span class="align-middle">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+
+            <!-- Search Small Screens -->
+            <div class="navbar-search-wrapper search-input-wrapper d-none">
+              <input
+                type="text"
+                class="form-control search-input container-xxl border-0"
+                placeholder="Search..."
+                aria-label="Search..." />
+              <i class="ti ti-x ti-sm search-toggler cursor-pointer"></i>
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="py-3 mb-4"><span class="text-muted fw-light">User Profile /</span> Projects</h4>
+
+              <!-- Header -->
+              <div class="row">
+                <div class="col-12">
+                  <div class="card mb-4">
+                    <div class="user-profile-header-banner">
+                      <img src="assets/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
+                    </div>
+                    <div class="user-profile-header d-flex flex-column flex-sm-row text-sm-start text-center mb-4">
+                      <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
+                        <img
+                          src="assets/img/avatars/14.png"
+                          alt="user image"
+                          class="d-block h-auto ms-0 ms-sm-4 rounded user-profile-img" />
+                      </div>
+                      <div class="flex-grow-1 mt-3 mt-sm-5">
+                        <div
+                          class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-4 flex-md-row flex-column gap-4">
+                          <div class="user-profile-info">
+                            <h4>John Doe</h4>
+                            <ul
+                              class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-2">
+                              <li class="list-inline-item d-flex gap-1">
+                                <i class="ti ti-color-swatch"></i> 24/7 Customer Support - Swap-n-Snap
+                              </li>
+                              <li class="list-inline-item d-flex gap-1"><i class="ti ti-map-pin"></i> Global </li>
+                              <!-- <li class="list-inline-item d-flex gap-1">
+                                <i class="ti ti-calendar"></i> Joined April 2021
+                              </li> -->
+                            </ul>
+                          </div>
+                          <a href="javascript:void(0)" class="btn btn-primary">
+                            <i class="ti ti-check me-1"></i>Contact me
+                          </a>
+                          <a href="javascript:void(0)" class="btn btn-primary">
+                            <i class="ti ti-check me-1"></i>Whatsapp
+                          </a>
+                          <a href="javascript:void(0)" class="btn btn-primary">
+                            <i class="ti ti-check me-1"></i>Save
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ Header -->
+
+              <!-- Navbar pills -->
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="nav nav-pills flex-column flex-sm-row mb-4">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="javascript:void(0);"
+                        ><i class="ti-xs ti ti-user-check me-1"></i> Intro & Links</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages-profile-teams.html"
+                        ><i class="ti-xs ti ti-users me-1"></i> Product pics & Videos</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages-profile-projects.html"
+                        ><i class="ti-xs ti ti-layout-grid me-1"></i> Contact Us</a
+                      >
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="pages-profile-connections.html"
+                        ><i class="ti-xs ti ti-link me-1"></i> Connections</a
+                      >
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+              <!--/ Navbar pills -->
+
+              <!-- Project Cards -->
+              <div class="row g-4">
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar me-2">
+                            <img
+                              src="assets/img/icons/brands/social-label.png"
+                              alt="Avatar"
+                              class="rounded-circle" />
+                          </div>
+                          <div class="me-2 ms-1">
+                            <h5 class="mb-0">
+                              <a href="javascript:;" class="stretched-link text-body">Social Banners</a>
+                            </h5>
+                            <div class="client-info">
+                              <span class="fw-medium">Client: </span><span class="text-muted">Christian Jimenez</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ms-auto">
+                          <div class="dropdown z-2">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle hide-arrow p-0"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <i class="ti ti-dots-vertical text-muted"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
+                              <li>
+                                <hr class="dropdown-divider" />
+                              </li>
+                              <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex align-items-center flex-wrap">
+                        <div class="bg-lighter px-3 py-2 rounded me-auto mb-3">
+                          <h6 class="mb-0">$24.8k <span class="text-body fw-normal">/ $18.2k</span></h6>
+                          <span>Total Budget</span>
+                        </div>
+                        <div class="text-end mb-3">
+                          <h6 class="mb-0">Start Date: <span class="text-body fw-normal">14/2/21</span></h6>
+                          <h6 class="mb-1">Deadline: <span class="text-body fw-normal">28/2/22</span></h6>
+                        </div>
+                      </div>
+                      <p class="mb-0">We are Consulting, Software Development and Web Development Services.</p>
+                    </div>
+                    <div class="card-body border-top">
+                      <div class="d-flex align-items-center mb-3">
+                        <h6 class="mb-1">All Hours: <span class="text-body fw-normal">380/244</span></h6>
+                        <span class="badge bg-label-success ms-auto">28 Days left</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2 pb-1">
+                        <small>Task: 290/344</small>
+                        <small>95% Completed</small>
+                      </div>
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 95%"
+                          aria-valuenow="95"
+                          aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex align-items-center pt-1">
+                        <div class="d-flex align-items-center">
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2 mt-1">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Vinnie Mostowy"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/5.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Allen Rieske"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/12.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Julee Rossignol"
+                              class="avatar avatar-sm pull-up me-2">
+                              <img class="rounded-circle" src="assets/img/avatars/6.png" alt="Avatar" />
+                            </li>
+                            <li><small class="text-muted">280 Members</small></li>
+                          </ul>
+                        </div>
+                        <div class="ms-auto">
+                          <a href="javascript:void(0);" class="text-body"
+                            ><i class="ti ti-message-dots ti-sm"></i> 15</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar me-2">
+                            <img
+                              src="assets/img/icons/brands/react-label.png"
+                              alt="Avatar"
+                              class="rounded-circle" />
+                          </div>
+                          <div class="me-2 ms-1">
+                            <h5 class="mb-0">
+                              <a href="javascript:;" class="stretched-link text-body">Admin Template</a>
+                            </h5>
+                            <div class="client-info">
+                              <span class="fw-medium">Client: </span><span class="text-muted">Jeffrey Phillips</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ms-auto">
+                          <div class="dropdown z-2">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle hide-arrow p-0"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <i class="ti ti-dots-vertical text-muted"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
+                              <li>
+                                <hr class="dropdown-divider" />
+                              </li>
+                              <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex align-items-center flex-wrap">
+                        <div class="bg-lighter px-3 py-2 rounded me-auto mb-3">
+                          <h6 class="mb-0">$2.4k <span class="text-body fw-normal">/ 1.8k</span></h6>
+                          <span>Total Budget</span>
+                        </div>
+                        <div class="text-end mb-3">
+                          <h6 class="mb-0">Start Date: <span class="text-body fw-normal">18/8/21</span></h6>
+                          <h6 class="mb-1">Deadline: <span class="text-body fw-normal">21/6/22</span></h6>
+                        </div>
+                      </div>
+                      <p class="mb-0">
+                        Time is our most valuable asset, that's why we want to help you save it by creating…
+                      </p>
+                    </div>
+                    <div class="card-body border-top">
+                      <div class="d-flex align-items-center mb-3">
+                        <h6 class="mb-1">All Hours: <span class="text-body fw-normal">98/135</span></h6>
+                        <span class="badge bg-label-warning ms-auto">15 Days left</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2 pb-1">
+                        <small>Task: 12/90</small>
+                        <small>42% Completed</small>
+                      </div>
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 42%"
+                          aria-valuenow="42"
+                          aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex align-items-center pt-1">
+                        <div class="d-flex align-items-center">
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kaith D'souza"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/5.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="John Doe"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/1.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Alan Walker"
+                              class="avatar avatar-sm pull-up me-2">
+                              <img class="rounded-circle" src="assets/img/avatars/6.png" alt="Avatar" />
+                            </li>
+                            <li><small class="text-muted">1.1k Members</small></li>
+                          </ul>
+                        </div>
+                        <div class="ms-auto">
+                          <a href="javascript:void(0);" class="text-body"
+                            ><i class="ti ti-message-dots ti-sm"></i> 236</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar me-2">
+                            <img
+                              src="assets/img/icons/brands/vue-label.png"
+                              alt="Avatar"
+                              class="rounded-circle" />
+                          </div>
+                          <div class="me-2 ms-1">
+                            <h5 class="mb-0"><a href="javascript:;" class="stretched-link text-body">App Design</a></h5>
+                            <div class="client-info">
+                              <span class="fw-medium">Client: </span><span class="text-muted">Ricky McDonald</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ms-auto">
+                          <div class="dropdown z-2">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle hide-arrow p-0"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <i class="ti ti-dots-vertical text-muted"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
+                              <li>
+                                <hr class="dropdown-divider" />
+                              </li>
+                              <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex align-items-center flex-wrap">
+                        <div class="bg-lighter px-3 py-2 rounded me-auto mb-3">
+                          <h6 class="mb-0">$980 <span class="text-body fw-normal">/ $420</span></h6>
+                          <span>Total Budget</span>
+                        </div>
+                        <div class="text-end mb-3">
+                          <h6 class="mb-0">Start Date: <span class="text-body fw-normal">24/7/21</span></h6>
+                          <h6 class="mb-1">Deadline: <span class="text-body fw-normal">8/10/21</span></h6>
+                        </div>
+                      </div>
+                      <p class="mb-0">App design combines the user interface (UI) and user experience (UX).</p>
+                    </div>
+                    <div class="card-body border-top">
+                      <div class="d-flex align-items-center mb-3">
+                        <h6 class="mb-1">All Hours: <span class="text-body fw-normal">880/421</span></h6>
+                        <span class="badge bg-label-danger ms-auto">45 Days left</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2 pb-1">
+                        <small>Task: 22/140</small>
+                        <small>68% Completed</small>
+                      </div>
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 68%"
+                          aria-valuenow="68"
+                          aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex align-items-center pt-1">
+                        <div class="d-flex align-items-center">
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Jimmy Ressula"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/4.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kristi Lawker"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/2.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Danny Paul"
+                              class="avatar avatar-sm pull-up me-2">
+                              <img class="rounded-circle" src="assets/img/avatars/7.png" alt="Avatar" />
+                            </li>
+                            <li><small class="text-muted">458 Members</small></li>
+                          </ul>
+                        </div>
+                        <div class="ms-auto">
+                          <a href="javascript:void(0);" class="text-body"
+                            ><i class="ti ti-message-dots ti-sm"></i> 98</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar me-2">
+                            <img
+                              src="assets/img/icons/brands/html-label.png"
+                              alt="Avatar"
+                              class="rounded-circle" />
+                          </div>
+                          <div class="me-2 ms-1">
+                            <h5 class="mb-0">
+                              <a href="javascript:;" class="stretched-link text-body">Create Website</a>
+                            </h5>
+                            <div class="client-info">
+                              <span class="fw-medium">Client: </span><span class="text-muted">Hulda Wright</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ms-auto">
+                          <div class="dropdown z-2">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle hide-arrow p-0"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <i class="ti ti-dots-vertical text-muted"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
+                              <li>
+                                <hr class="dropdown-divider" />
+                              </li>
+                              <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex align-items-center flex-wrap">
+                        <div class="bg-lighter px-3 py-2 rounded me-auto mb-3">
+                          <h6 class="mb-0">$8.5k <span class="text-body fw-normal">/ $2.43k</span></h6>
+                          <span>Total Budget</span>
+                        </div>
+                        <div class="text-end mb-3">
+                          <h6 class="mb-0">Start Date: <span class="text-body fw-normal">10/2/19</span></h6>
+                          <h6 class="mb-1">Deadline: <span class="text-body fw-normal">12/9/22</span></h6>
+                        </div>
+                      </div>
+                      <p class="mb-0">Your domain name should reflect your products or services so that your...</p>
+                    </div>
+                    <div class="card-body border-top">
+                      <div class="d-flex align-items-center mb-3">
+                        <h6 class="mb-1">All Hours: <span class="text-body fw-normal">1.2k/820</span></h6>
+                        <span class="badge bg-label-warning ms-auto">126 Days left</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2 pb-1">
+                        <small>Task: 237/420</small>
+                        <small>72% Completed</small>
+                      </div>
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 72%"
+                          aria-valuenow="72"
+                          aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex align-items-center pt-1">
+                        <div class="d-flex align-items-center">
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Andrew Tye"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/6.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Rishi Swaat"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/9.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Rossie Kim"
+                              class="avatar avatar-sm pull-up me-2">
+                              <img class="rounded-circle" src="assets/img/avatars/12.png" alt="Avatar" />
+                            </li>
+                            <li><small class="text-muted">137 Members</small></li>
+                          </ul>
+                        </div>
+                        <div class="ms-auto">
+                          <a href="javascript:void(0);" class="text-body"
+                            ><i class="ti ti-message-dots ti-sm"></i> 120</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar me-2">
+                            <img
+                              src="assets/img/icons/brands/figma-label.png"
+                              alt="Avatar"
+                              class="rounded-circle" />
+                          </div>
+                          <div class="me-2 ms-1">
+                            <h5 class="mb-0">
+                              <a href="javascript:;" class="stretched-link text-body">Figma Dashboard</a>
+                            </h5>
+                            <div class="client-info">
+                              <span class="fw-medium">Client: </span><span class="text-muted">Jerry Greene</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ms-auto">
+                          <div class="dropdown z-2">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle hide-arrow p-0"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <i class="ti ti-dots-vertical text-muted"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
+                              <li>
+                                <hr class="dropdown-divider" />
+                              </li>
+                              <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex align-items-center flex-wrap">
+                        <div class="bg-lighter px-3 py-2 rounded me-auto mb-3">
+                          <h6 class="mb-0">$52.7k <span class="text-body fw-normal">/ $28.4k</span></h6>
+                          <span>Total Budget</span>
+                        </div>
+                        <div class="text-end mb-3">
+                          <h6 class="mb-0">Start Date: <span class="text-body fw-normal">12/12/20</span></h6>
+                          <h6 class="mb-1">Deadline: <span class="text-body fw-normal">25/12/21</span></h6>
+                        </div>
+                      </div>
+                      <p class="mb-0">
+                        Use this template to organize your design project. Some of the key features are…
+                      </p>
+                    </div>
+                    <div class="card-body border-top">
+                      <div class="d-flex align-items-center mb-3">
+                        <h6 class="mb-1">All Hours: <span class="text-body fw-normal">142/420</span></h6>
+                        <span class="badge bg-label-danger ms-auto">5 Days left</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2 pb-1">
+                        <small>Task: 29/285</small>
+                        <small>35% Completed</small>
+                      </div>
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 35%"
+                          aria-valuenow="35"
+                          aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex align-items-center pt-1">
+                        <div class="d-flex align-items-center">
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kim Merchent"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/10.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Sam D'souza"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/13.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Nurvi Karlos"
+                              class="avatar avatar-sm pull-up me-2">
+                              <img class="rounded-circle" src="assets/img/avatars/5.png" alt="Avatar" />
+                            </li>
+                            <li><small class="text-muted">82 Members</small></li>
+                          </ul>
+                        </div>
+                        <div class="ms-auto">
+                          <a href="javascript:void(0);" class="text-body"
+                            ><i class="ti ti-message-dots ti-sm"></i> 20</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar me-2">
+                            <img src="assets/img/icons/brands/xd-label.png" alt="Avatar" class="rounded-circle" />
+                          </div>
+                          <div class="me-2 ms-1">
+                            <h5 class="mb-0">
+                              <a href="javascript:;" class="stretched-link text-body">Logo Design</a>
+                            </h5>
+                            <div class="client-info">
+                              <span class="fw-medium">Client: </span><span class="text-muted">Olive Strickland</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ms-auto">
+                          <div class="dropdown z-2">
+                            <button
+                              type="button"
+                              class="btn dropdown-toggle hide-arrow p-0"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <i class="ti ti-dots-vertical text-muted"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                              <li><a class="dropdown-item" href="javascript:void(0);">Rename project</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">View details</a></li>
+                              <li><a class="dropdown-item" href="javascript:void(0);">Add to favorites</a></li>
+                              <li>
+                                <hr class="dropdown-divider" />
+                              </li>
+                              <li><a class="dropdown-item text-danger" href="javascript:void(0);">Leave Project</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex align-items-center flex-wrap">
+                        <div class="bg-lighter px-3 py-2 rounded me-auto mb-3">
+                          <h6 class="mb-0">$1.3k <span class="text-body fw-normal">/ $655</span></h6>
+                          <span>Total Budget</span>
+                        </div>
+                        <div class="text-end mb-3">
+                          <h6 class="mb-0">Start Date: <span class="text-body fw-normal">17/8/21</span></h6>
+                          <h6 class="mb-1">Deadline: <span class="text-body fw-normal">02/11/21</span></h6>
+                        </div>
+                      </div>
+                      <p class="mb-0">
+                        Premium logo designs created by top logo designers. Create the branding of business.
+                      </p>
+                    </div>
+                    <div class="card-body border-top">
+                      <div class="d-flex align-items-center mb-3">
+                        <h6 class="mb-1">All Hours: <span class="text-body fw-normal">580/445</span></h6>
+                        <span class="badge bg-label-success ms-auto">4 Days left</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-2 pb-1">
+                        <small>Task: 290/290</small>
+                        <small>100% Completed</small>
+                      </div>
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 100%"
+                          aria-valuenow="100"
+                          aria-valuemin="0"
+                          aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex align-items-center pt-1">
+                        <div class="d-flex align-items-center">
+                          <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 z-2">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Kim Karlos"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/3.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Katy Turner"
+                              class="avatar avatar-sm pull-up">
+                              <img class="rounded-circle" src="assets/img/avatars/9.png" alt="Avatar" />
+                            </li>
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              title="Peter Adward"
+                              class="avatar avatar-sm pull-up me-2">
+                              <img class="rounded-circle" src="assets/img/avatars/6.png" alt="Avatar" />
+                            </li>
+                            <li><small class="text-muted">16 Members</small></li>
+                          </ul>
+                        </div>
+                        <div class="ms-auto">
+                          <a href="javascript:void(0);" class="text-body"
+                            ><i class="ti ti-message-dots ti-sm"></i> 37</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ Project Cards -->
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column">
+                  <div>
+                    ©
+                    <script>
+                      document.write(new Date().getFullYear());
+                    </script>
+                    , made with ❤️ by
+                    <a href="https://pixinvent.com" target="_blank" class="footer-link text-primary fw-medium"
+                      >Pixinvent</a
+                    >
+                  </div>
+                  <div class="d-none d-lg-inline-block">
+                    <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank"
+                      >License</a
+                    >
+                    <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4"
+                      >More Themes</a
+                    >
+
+                    <a
+                      href="https://demos.pixinvent.com/vuexy-html-admin-template/documentation/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Documentation</a
+                    >
+
+                    <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block"
+                      >Support</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+      <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+
+    <script src="assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="assets/vendor/libs/popper/popper.js"></script>
+    <script src="assets/vendor/js/bootstrap.js"></script>
+    <script src="assets/vendor/libs/node-waves/node-waves.js"></script>
+    <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Page JS -->
+  </body>
+</html>
