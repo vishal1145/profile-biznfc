@@ -60,11 +60,8 @@
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <!-- Layout container -->
-      <div class="layout-page">
+      <div class="layout-page" style="padding-top: 0 !important;">
         <!-- Navbar -->
-
-
-
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
@@ -73,44 +70,35 @@
 
           <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="py-3 mb-4"><span class="text-muted fw-light">User Profile /</span> Profile</h4>
-
+        
             <!-- Header -->
             <div class="row">
               <div class="col-9">
                 <div class="card mb-4">
                   <div class="user-profile-header-banner">
-                    <img src="assets/img/pages/profile-banner.png" alt="Banner image" class="rounded-top" />
+                    <img ng-src="{{ cardDetails.coverImageUrl || 'assets/img/pages/profile-banner.png' }}" alt="Banner image" class="rounded-top" />
                   </div>
                   <div class="user-profile-header d-flex flex-column flex-sm-row text-sm-start text-center mb-4">
                     <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto">
-                      <img src="assets/img/avatars/14.png" alt="user image"
-                        class="d-block h-auto ms-0 ms-sm-4 rounded user-profile-img" />
+                      <img ng-src="{{ cardDetails.photoUrl }}" alt="user image" class="d-block h-auto ms-0 ms-sm-4 rounded user-profile-img" style="height: 120px !important;object-fit: cover;"/>
                     </div>
                     <div class="flex-grow-1 mt-3 mt-sm-5">
-                      <div
-                        class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-4 flex-md-row flex-column gap-4">
+                      <div class="d-flex align-items-md-end align-items-sm-start align-items-center justify-content-md-between justify-content-start mx-4 flex-md-row flex-column gap-4">
                         <div class="user-profile-info">
-                          <h4>{{name}}</h4>
-                          <ul
-                            class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-2">
+                          <h4>{{ cardDetails.fullName }}</h4>
+                          <ul class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-2">
                             <li class="list-inline-item d-flex gap-1">
-                              <i class="ti ti-color-swatch"></i> 24/7 Customer Support - Swap-n-Snap
+                              <i class="ti ti-color-swatch"></i> {{ cardDetails.designation || 'N/A' }} - {{ cardDetails.organization || 'N/A' }}
                             </li>
-                            <li class="list-inline-item d-flex gap-1"><i class="ti ti-map-pin"></i> Global </li>
-                            <!-- <li class="list-inline-item d-flex gap-1">
-                                <i class="ti ti-calendar"></i> Joined April 2021
-                              </li> -->
+                            <li class="list-inline-item d-flex gap-1"><i class="ti ti-map-pin"></i> {{ cardDetails.address || 'N/A' }}</li>
                           </ul>
                         </div>
                         <a href="javascript:void(0)" class="btn btn-primary">
                           <i class="ti ti-phone-call me-1"></i>
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-primary">
+                        <a href="javascript:void(0)" class="btn btn-primary" ng-click="shareOnWhatsApp()">
                           <i class="ti ti-share me-1"></i>
-                        </a>
-                        <!-- <a href="javascript:void(0)" class="btn btn-primary">
-                          <i class="ti ti-device-desktop me-1"></i>
-                        </a> -->
+                      </a>
                       </div>
                     </div>
                   </div>
@@ -118,7 +106,7 @@
               </div>
             </div>
             <!--/ Header -->
-
+        
             <!-- Navbar pills -->
             <div class="row">
               <div class="col-md-12">
@@ -128,39 +116,21 @@
                       Intro & Links</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages-profile-teams.html"><i class="ti-xs ti ti-users me-1"></i> Product
-                      pics & Videos</a>
+                    <a class="nav-link" href="pages-profile-teams.html"><i class="ti-xs ti ti-users me-1"></i> Product pics & Videos</a>
                   </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="pages-profile-projects.html"><i class="ti-xs ti ti-layout-grid me-1"></i>
-                      Contact Us</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                      <a class="nav-link" href="pages-profile-connections.html"
-                        ><i class="ti-xs ti ti-link me-1"></i> Connections</a
-                      >
-                    </li> -->
                 </ul>
               </div>
             </div>
             <!--/ Navbar pills -->
-
+        
             <!-- User Profile Content -->
             <div class="row">
-              <!-- Connections -->
-
-              <!--/ Connections -->
-              <!-- Teams -->
               <div class="col-9 mt-5">
                 <div class="card-action mb-4">
                   <div class="card-header align-items-center">
                     <h5 class="card-action-title mb-0">Connect with me</h5>
                     <div class="card-action-element mt-5">
                       <div class="dropdown">
-                        <!-- <button type="button" class="btn dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          <i class="ti ti-dots-vertical text-muted"></i>
-                        </button> -->
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li><a class="dropdown-item" href="javascript:void(0);">Share teams</a></li>
                           <li><a class="dropdown-item" href="javascript:void(0);">Suggest edits</a></li>
@@ -172,75 +142,65 @@
                       </div>
                     </div>
                   </div>
-                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="mb-3">
-                          <div class="d-flex align-items-center">
-                            <div class="d-flex align-items-start">
-                              <div class="avatar me-2">
-                                <img src="assets/img/icons/brands/react-label.png" alt="Avatar"
-                                  class="rounded-circle" />
-                              </div>
-                              <div class="me-2 ms-1">
-                                <h6 class="mb-0">React Developers</h6>
-                                <small class="text-muted">72 Members</small>
-                              </div>
-                            </div>
-
-                          </div>
-                        </li>
-                
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="mb-3">
-                          <div class="d-flex align-items-center">
-                            <div class="d-flex align-items-start">
-                              <div class="avatar me-2">
-                                <img src="assets/img/icons/brands/react-label.png" alt="Avatar"
-                                  class="rounded-circle" />
-                              </div>
-                              <div class="me-2 ms-1">
-                                <h6 class="mb-0">React Developers</h6>
-                                <small class="text-muted">72 Members</small>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                          <li class="mb-3">
+                            <div class="d-flex align-items-center">
+                              <div class="d-flex align-items-start">
+                                <div class="avatar me-2">
+                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
+                                </div>
+                                <div class="me-2 ms-1">
+                                  <h6 class="mb-0">React Developers</h6>
+                                  <small class="text-muted">72 Members</small>
+                                </div>
                               </div>
                             </div>
-
-                          </div>
-                        </li>
-                
-                      </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                          <li class="mb-3">
+                            <div class="d-flex align-items-center">
+                              <div class="d-flex align-items-start">
+                                <div class="avatar me-2">
+                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
+                                </div>
+                                <div class="me-2 ms-1">
+                                  <h6 class="mb-0">React Developers</h6>
+                                  <small class="text-muted">72 Members</small>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-
-                 </div>
                 </div>
               </div>
-              <!--/ Teams -->
             </div>
             <!--/ User Profile Content -->
-
-
+        
             <div class="row">
-              <!-- Connections -->
-
-              <!--/ Connections -->
-              <!-- Teams -->
+              <div class="col-9">
+                <div style="font-weight: 800; font-size: 1.5rem;">About Us</div>
+                <div class="mt-3">{{ cardDetails.bio || 'Welcome to SwapnSnap ! Our NFC Digital Business Card will open a lot of doors for you in your professional as well as personal life. There is no better way to elevate your style quotient than this card. Showcase your work, validate your performance with photos and videos and make lasting connections with a simple tap that opens up your world on a microsite.' }}</div>
+              </div>
+            </div>
+        
+            <div class="row">
               <div class="col-9 mt-5">
                 <div class="card-action mb-4">
                   <div class="card-header align-items-center">
-                    <h5 class="card-action-title mb-0">Contact Details</h5>
+                    <h5 class="card-action-title mb-0">More</h5>
                     <div class="card-action-element mt-5">
                       <div class="dropdown">
-                        <!-- <button type="button" class="btn dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          <i class="ti ti-dots-vertical text-muted"></i>
-                        </button> -->
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li><a class="dropdown-item" href="javascript:void(0);">Share teams</a></li>
                           <li><a class="dropdown-item" href="javascript:void(0);">Suggest edits</a></li>
@@ -252,153 +212,51 @@
                       </div>
                     </div>
                   </div>
-                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="mb-3">
-                          <div class="d-flex align-items-center">
-                            <div class="d-flex align-items-start">
-                              <div class="avatar me-2">
-                                <img src="assets/img/icons/brands/react-label.png" alt="Avatar"
-                                  class="rounded-circle" />
-                              </div>
-                              <div class="me-2 ms-1">
-                                <h6 class="mb-0">React Developers</h6>
-                                <small class="text-muted">72 Members</small>
-                              </div>
-                            </div>
-
-                          </div>
-                        </li>
-                
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="mb-3">
-                          <div class="d-flex align-items-center">
-                            <div class="d-flex align-items-start">
-                              <div class="avatar me-2">
-                                <img src="assets/img/icons/brands/react-label.png" alt="Avatar"
-                                  class="rounded-circle" />
-                              </div>
-                              <div class="me-2 ms-1">
-                                <h6 class="mb-0">React Developers</h6>
-                                <small class="text-muted">72 Members</small>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                          <li class="mb-3">
+                            <div class="d-flex align-items-center">
+                              <div class="d-flex align-items-start">
+                                <div class="avatar me-2">
+                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
+                                </div>
+                                <div class="me-2 ms-1">
+                                  <h6 class="mb-0">React Developers</h6>
+                                  <small class="text-muted">72 Members</small>
+                                </div>
                               </div>
                             </div>
-
-                          </div>
-                        </li>
-                
-                      </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                          <li class="mb-3">
+                            <div class="d-flex align-items-center">
+                              <div class="d-flex align-items-start">
+                                <div class="avatar me-2">
+                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
+                                </div>
+                                <div class="me-2 ms-1">
+                                  <h6 class="mb-0">React Developers</h6>
+                                  <small class="text-muted">72 Members</small>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-
-                 </div>
                 </div>
               </div>
-              <!--/ Teams -->
             </div>
-
-
-
-           <div class="row">
-            <div class="col-9">
-              <div style="font-weight: 800; font-size: 1.5rem;">About Us</div>
-              <div class="mt-3">Welcome to SwapnSnap ! Our NFC Digital Business Card will open a lot of doors for you in your
-                professional as well as personal life. There is no better way to elevate your style quotient than this
-                card. Showcase your work, validate your performance with photos and videos and make lasting connections
-                with a simple tap that opens up your world on a microsite.</div>
-            </div>
-            <div class="mt-2">MAKE AN IMPACT WITH EVERY TAP!</div>
-            </div>
-
-
-         
-                <div class="row">
-                  <!-- Connections -->
-    
-                  <!--/ Connections -->
-                  <!-- Teams -->
-                  <div class="col-9 mt-5">
-                    <div class="card-action mb-4">
-                      <div class="card-header align-items-center">
-                        <h5 class="card-action-title mb-0">More</h5>
-                        <div class="card-action-element mt-5">
-                          <div class="dropdown">
-                            <!-- <button type="button" class="btn dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown"
-                              aria-expanded="false">
-                              <i class="ti ti-dots-vertical text-muted"></i>
-                            </button> -->
-                            <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="javascript:void(0);">Share teams</a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Suggest edits</a></li>
-                              <li>
-                                <hr class="dropdown-divider" />
-                              </li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">Report bug</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="card-body">
-                          <ul class="list-unstyled mb-0">
-                            <li class="mb-3">
-                              <div class="d-flex align-items-center">
-                                <div class="d-flex align-items-start">
-                                  <div class="avatar me-2">
-                                    <img src="assets/img/icons/brands/react-label.png" alt="Avatar"
-                                      class="rounded-circle" />
-                                  </div>
-                                  <div class="me-2 ms-1">
-                                    <h6 class="mb-0">React Developers</h6>
-                                    <small class="text-muted">72 Members</small>
-                                  </div>
-                                </div>
-    
-                              </div>
-                            </li>
-                    
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card-body">
-                          <ul class="list-unstyled mb-0">
-                            <li class="mb-3">
-                              <div class="d-flex align-items-center">
-                                <div class="d-flex align-items-start">
-                                  <div class="avatar me-2">
-                                    <img src="assets/img/icons/brands/react-label.png" alt="Avatar"
-                                      class="rounded-circle" />
-                                  </div>
-                                  <div class="me-2 ms-1">
-                                    <h6 class="mb-0">React Developers</h6>
-                                    <small class="text-muted">72 Members</small>
-                                  </div>
-                                </div>
-    
-                              </div>
-                            </li>
-                    
-                          </ul>
-                        </div>
-                      </div>
-    
-                     </div>
-                    </div>
-                  </div>
-                  <!--/ Teams -->
-                </div>
-           
-
-           </div>
+        
+          </div>
           <!-- / Content -->
 
           <!-- Footer -->
