@@ -11,7 +11,7 @@
 
   <title>{{userTitle}}</title>
 
-  <meta name="description" content="" />
+  <meta name="description" content="{{getDesc}}" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
@@ -54,9 +54,16 @@
   <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js" ></script>
   <!-- <script src="script.js" ></script> -->
   <script src="assets/js/script.js" ></script>
+
+  <meta property="og:url"                content="{{ogUrl}}" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="{{userTitle}}" />
+  <meta property="og:description"        content="{{getDesc}}" />
+  <meta property="og:image"              content="{{ogImage}}" />
+
 </head>
 
-<body>
+<body class="ng-cloak">
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
