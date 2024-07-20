@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/cards/:cardurl', (req, res) => {
+app.get('/:cardurl', (req, res) => {
   const cardurl = req.params.cardurl;
   console.log({ url: cardurl });
 
