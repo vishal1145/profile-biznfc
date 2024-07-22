@@ -44,11 +44,14 @@ app.get('/:cardurl', async (req, res) => {
           var userTitle = `${name} - ${designation} - ${company} | Biznfc`;
           data = data.replace('{{userTitle}}', userTitle);
           data = data.replace('{{userTitle}}', userTitle);
+          data = data.replace('{{userTitle}}', userTitle);
 
           var getDesc = cardData.bio;
           data = data.replace('{{getDesc}}', getDesc);
           data = data.replace('{{getDesc}}', getDesc);
+          data = data.replace('{{getDesc}}', getDesc);
 
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
           data = data.replace('{{ogImage}}', cardData.photoUrl);
 
           data = data.replace('{{ogUrl}}', fullUrl)
