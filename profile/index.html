@@ -106,10 +106,10 @@
                             <li class="list-inline-item d-flex gap-1"><i class="ti ti-map-pin"></i> {{ cardDetails.address || 'N/A' }}</li>
                           </ul>
                         </div>
-                        <a href="javascript:void(0)" class="btn btn-primary">
+                        <a href="javascript:void(0)" class="btn btn-primary" ng-click="downloadTextFile()">
                           <i class="ti ti-phone-call me-1"></i>
-                        </a>
-                        <a href="javascript:void(0)" class="btn btn-primary" ng-click="shareOnWhatsApp()">
+                        </a>                      
+                        <a href="javascript:void(0)" class="btn btn-primary" ng-click="shareCard()">
                           <i class="ti ti-share me-1"></i>
                       </a>
                       </div>
@@ -128,9 +128,9 @@
                     <a class="nav-link active" href="javascript:void(0);"><i class="ti-xs ti ti-user-check me-1"></i>
                       Intro & Links</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a class="nav-link" href="pages-profile-teams.html"><i class="ti-xs ti ti-users me-1"></i> Product pics & Videos</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -147,46 +147,27 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li><a class="dropdown-item" href="javascript:void(0);">Share teams</a></li>
                           <li><a class="dropdown-item" href="javascript:void(0);">Suggest edits</a></li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
+                          <li><hr class="dropdown-divider" /></li>
                           <li><a class="dropdown-item" href="javascript:void(0);">Report bug</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" ng-repeat="item in items">
                       <div class="card-body">
                         <ul class="list-unstyled mb-0">
                           <li class="mb-3">
                             <div class="d-flex align-items-center">
                               <div class="d-flex align-items-start">
                                 <div class="avatar me-2">
-                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
+                                  <img ng-src="{{'assets/icon/' + item.icon.iconImageUrl}}" alt="Avatar" class="rounded-circle" />
                                 </div>
                                 <div class="me-2 ms-1">
-                                  <h6 class="mb-0">React Developers</h6>
-                                  <small class="text-muted">72 Members</small>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="card-body">
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-3">
-                            <div class="d-flex align-items-center">
-                              <div class="d-flex align-items-start">
-                                <div class="avatar me-2">
-                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
-                                </div>
-                                <div class="me-2 ms-1">
-                                  <h6 class="mb-0">React Developers</h6>
-                                  <small class="text-muted">72 Members</small>
+                                  <h6 class="mb-0">
+                                    <a class="text-muted" ng-href="{{item.value}}" target="_blank" style="font-weight: 500; color: #5d596c !important;">{{item.displayName}}</a>
+                                  </h6>
+                                  <small class="text-muted">{{item.label}}</small>
                                 </div>
                               </div>
                             </div>
@@ -197,75 +178,14 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>            
+            
             <!--/ User Profile Content -->
         
             <div class="row">
               <div class="col-9">
                 <div style="font-weight: 800; font-size: 1.5rem;">About Us</div>
                 <div class="mt-3">{{ cardDetails.bio || 'Welcome to SwapnSnap ! Our NFC Digital Business Card will open a lot of doors for you in your professional as well as personal life. There is no better way to elevate your style quotient than this card. Showcase your work, validate your performance with photos and videos and make lasting connections with a simple tap that opens up your world on a microsite.' }}</div>
-              </div>
-            </div>
-        
-            <div class="row">
-              <div class="col-9 mt-5">
-                <div class="card-action mb-4">
-                  <div class="card-header align-items-center">
-                    <h5 class="card-action-title mb-0">More</h5>
-                    <div class="card-action-element mt-5">
-                      <div class="dropdown">
-                        <ul class="dropdown-menu dropdown-menu-end">
-                          <li><a class="dropdown-item" href="javascript:void(0);">Share teams</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Suggest edits</a></li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">Report bug</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="card-body">
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-3">
-                            <div class="d-flex align-items-center">
-                              <div class="d-flex align-items-start">
-                                <div class="avatar me-2">
-                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
-                                </div>
-                                <div class="me-2 ms-1">
-                                  <h6 class="mb-0">React Developers</h6>
-                                  <small class="text-muted">72 Members</small>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="card-body">
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-3">
-                            <div class="d-flex align-items-center">
-                              <div class="d-flex align-items-start">
-                                <div class="avatar me-2">
-                                  <img src="assets/img/icons/brands/react-label.png" alt="Avatar" class="rounded-circle" />
-                                </div>
-                                <div class="me-2 ms-1">
-                                  <h6 class="mb-0">React Developers</h6>
-                                  <small class="text-muted">72 Members</small>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
         
@@ -278,11 +198,29 @@
               <div
                 class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column">
                 <div>
-                  ©
+                  <!-- ©
                   <script>
                     document.write(new Date().getFullYear());
-                  </script>
-                   {{ cardDetails.fullName }}. All Rights Reserved. Powered by Swap-n-snap.
+                  </script> -->
+                   <!-- {{ cardDetails.fullName }}. All Rights Reserved. Powered by Swap-n-snap. -->
+                   <div class="d-none d-lg-inline-block me-4">
+                    <a href="https://biznfc.algofolks.com/privacy-policy" target="_blank" class="footer-link me-4" style="cursor: pointer;"
+                      >Privacy Policy</a
+                    >
+                    <a href="https://biznfc.algofolks.com/terms-of" target="_blank" class="footer-link me-4" style="cursor: pointer;"
+                      >Terms Of Services</a
+                    >
+                    <a
+                      href="https://biznfc.com/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Check For Updates</a
+                    >
+            
+                    <a href="https://biznfc.com/contact/" target="_blank" class="footer-link d-none d-sm-inline-block"
+                      >Support</a
+                    >
+                  </div>
                   <!-- <a href="https://pixinvent.com" target="_blank"
                     class="footer-link text-primary fw-medium">Pixinvent</a> -->
                 </div>
