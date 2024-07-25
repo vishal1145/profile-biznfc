@@ -90,20 +90,32 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
     };
 
     $scope.downloadTextFile = function () {
-        console.log("fsdfdsf");
-        const mobileNo = $scope.cardDetails.mobileValue || '';
-        const cardName = $scope.cardDetails.viewFullName || 'Biznfc';
-        const designation = $scope.cardDetails.viewDesignation || '';
-        const company = $scope.cardDetails.viewOrganization || '';
-        const cardId = $scope.cardDetails.cardsByUserId;
-
-        $scope.shareCardUrl(cardId).then(() => {
-            const website = $scope.cardDetails.webValue || '';
-            const email = $scope.cardDetails.emailValue || '';
-            const currentDate = new Date();
-            const formattedDate = currentDate.toISOString().split('T')[0];
-
-            const textContent = `BEGIN:VCARD
+        if (requestData.url) {
+            $http.post('https://biznfc.net/getCardByUrl', requestData)
+                .then(function (response) {
+                    if (response.data.success) {
+                        $scope.cardDetails = response.data.results[0];
+                        var cardId = $scope.cardDetails.cardId;
+                        console.log("cardId111", $scope.cardDetails);
+    
+                        // Define variables within the callback
+                        var mobileNo = $scope.cardDetails.cardMobileNo || '';
+                        var cardName = $scope.cardDetails.fullName || 'Biznfc';
+                        var designation = $scope.cardDetails.designation || '';
+                        var company = $scope.cardDetails.organization || '';
+                        var website = $scope.cardDetails.webValue || '';
+                        var email = $scope.cardDetails.emailValue || '';
+                        var currentDate = new Date();
+                        var formattedDate = currentDate.toISOString().split('T')[0];
+    
+                        // Only call getAllItemByCardId if needed, otherwise comment out or remove
+                        if (cardId) {
+                            getAllItemByCardId(cardId);
+                        }
+    
+                        // Create the vCard text content
+                        const textContent = 
+`BEGIN:VCARD
 VERSION:3.0
 N:${cardName};;;;
 FN:${cardName}
@@ -114,19 +126,28 @@ URL:${$scope.cardDetails.shareUrl}
 ORG:${company}
 TITLE:${designation}
 X-ABDATE:${formattedDate}
-END:VCARD`;
-
-            const blob = new Blob([textContent], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${cardName}.vcf`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }).catch((error) => {
-            console.error('Error:', error);
-        });
+END:VCARD
+`;
+    
+                        // Create a blob and download the file
+                        const blob = new Blob([textContent], { type: 'text/plain' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `${cardName}.vcf`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    } else {
+                        console.error('API response unsuccessful:', response.data);
+                    }
+                }, function (error) {
+                    console.error('Error occurred:', error);
+                });
+        } else {
+            console.error('Card ID is missing.');
+        }
     };
+    
 });

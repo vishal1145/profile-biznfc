@@ -186,6 +186,7 @@
                             <a
                               class="nav-link active"
                               href="javascript:void(0);"
+                              ng-click="downloadTextFile()"
                               ><i class="ti-xs ti ti-user-check me-1"></i> Save Contact</a
                             >
                           </li>
@@ -294,6 +295,9 @@
                     </div>
                     </div>
                   </div>
+                  <div class="mt-3" style="display: flex; justify-content: center;">
+                    powered by <a href="https://biznfc.com/" style="margin-left: 3px"> BIZNFC</a>
+                  </div>
                 </div>
               </div>
               <!--/ Header -->
@@ -301,7 +305,7 @@
             <!-- / Content -->
 
             <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
+            <footer class="content-footer footer bg-footer-theme d-none">
               <div class="container-xxl">
                 <div
                   class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column"
@@ -312,8 +316,8 @@
                     document.write(new Date().getFullYear());
                   </script> -->
                     <!-- {{ cardDetails.fullName }}. All Rights Reserved. Powered by Swap-n-snap. -->
-                    <div class="d-none d-lg-inline-block me-4">
-                      <a
+                    <div class="d-lg-inline-block me-4">
+                      <!-- <a
                         href="https://biznfc.algofolks.com/privacy-policy"
                         target="_blank"
                         class="footer-link me-4"
@@ -339,7 +343,9 @@
                         target="_blank"
                         class="footer-link d-none d-sm-inline-block"
                         >Support</a
-                      >
+                      > -->
+
+                      <!-- Powered by BIZNFC -->
                     </div>
                     <!-- <a href="https://pixinvent.com" target="_blank"
                     class="footer-link text-primary fw-medium">Pixinvent</a> -->
