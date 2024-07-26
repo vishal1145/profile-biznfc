@@ -89,6 +89,33 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
         window.open(whatsappUrl, '_blank');
     };
 
+    function getProfileItemByCardId(cardId) {
+        var payload = { cardId: cardId };
+        return $http.post('https://biznfc.net/getAllItemByCardId', payload)
+            .then(function (response) {
+                if (response.data.success) {
+                    var items = response.data.results;
+    
+                    var emailItem = items.find(item => item.displayName === 'Email');
+                    var phoneItem = items.find(item => item.displayName === 'Phone');
+                    var websiteItem = items.find(item => item.displayName === 'Website');
+    
+                    var email = emailItem ? emailItem.value.replace(/^https?:\/\//, '') : '';
+                    var phone = phoneItem ? phoneItem.value.replace(/^https?:\/\//, '') : '';
+                    var website = websiteItem ? websiteItem.value.replace(/^https?:\/\//, '') : '';
+    
+                    return { email, phone, website };
+                } else {
+                    return Promise.reject('Error fetching items: ' + response.data.message);
+                }
+            })
+            .catch(function (error) {
+                console.error('HTTP request error:', error);
+                return Promise.reject(error);
+            });
+    }
+    
+
     $scope.downloadTextFile = function () {
         if (requestData.url) {
             $http.post('https://biznfc.net/getCardByUrl', requestData)
@@ -99,46 +126,49 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
                         console.log("cardId111", $scope.cardDetails);
     
                         // Define variables within the callback
-                        var mobileNo = $scope.cardDetails.cardMobileNo || '';
                         var cardName = $scope.cardDetails.fullName || 'Biznfc';
                         var designation = $scope.cardDetails.designation || '';
                         var company = $scope.cardDetails.organization || '';
-                        var website = $scope.cardDetails.webValue || '';
-                        var email = $scope.cardDetails.emailValue || '';
                         var currentDate = new Date();
                         var formattedDate = currentDate.toISOString().split('T')[0];
     
-                        // Only call getAllItemByCardId if needed, otherwise comment out or remove
                         if (cardId) {
-                            getAllItemByCardId(cardId);
+                            getProfileItemByCardId(cardId).then(function (profileItems) {
+                                // Use the returned email, phone, and website
+                                var email = profileItems.email;
+                                var mobileNo = profileItems.phone;
+                                var website = profileItems.website;
+    
+                                // Create the vCard text content
+                                const textContent = 
+    `BEGIN:VCARD
+    VERSION:3.0
+    N:${cardName};;;;
+    FN:${cardName}
+    TEL;TYPE=WORK:${mobileNo}
+    EMAIL:${email}
+    URL:${website}
+    URL:${$scope.cardDetails.shareUrl}
+    ORG:${company}
+    TITLE:${designation}
+    X-ABDATE:${formattedDate}
+    END:VCARD
+    `;
+    
+                                // Create a blob and download the file
+                                const blob = new Blob([textContent], { type: 'text/plain' });
+                                const url = URL.createObjectURL(blob);
+                                const a = document.createElement('a');
+                                a.href = url;
+                                a.download = `${cardName}.vcf`;
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                                URL.revokeObjectURL(url);
+                            }).catch(function (error) {
+                                console.error('Error fetching profile items:', error);
+                            });
                         }
-    
-                        // Create the vCard text content
-                        const textContent = 
-`BEGIN:VCARD
-VERSION:3.0
-N:${cardName};;;;
-FN:${cardName}
-TEL;TYPE=WORK:${mobileNo}
-EMAIL:${email}
-URL:${website}
-URL:${$scope.cardDetails.shareUrl}
-ORG:${company}
-TITLE:${designation}
-X-ABDATE:${formattedDate}
-END:VCARD
-`;
-    
-                        // Create a blob and download the file
-                        const blob = new Blob([textContent], { type: 'text/plain' });
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = `${cardName}.vcf`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(url);
                     } else {
                         console.error('API response unsuccessful:', response.data);
                     }
