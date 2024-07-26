@@ -59,20 +59,8 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
 
     $scope.redirectTo = function(item) {
     
-        if (!item.icon.preUrl || !item.value) {
-            console.error('Invalid base URL or path:', item.icon.preUrl, item.value);
-            return;
-        }
-    
-        try {
-            const baseUrl = item.icon.preUrl.endsWith('/') ? item.icon.preUrl : item.icon.preUrl + '/';
-            const path = item.value.startsWith('/') ? item.value.substring(1) : item.value;
-            const url = new URL(path, baseUrl);
-    
-            window.open(url.href, '_blank');
-        } catch (error) {
-            console.error('Failed to construct URL:', error);
-        }
+        const url = item.icon.preUrl + item.value;
+        window.open(url, '_blank');
     };
     
     

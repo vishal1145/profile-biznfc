@@ -11,6 +11,11 @@
   ng-controller="biznfcController"
 >
   <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
     <title>{{userTitle}}</title>
     <meta name="description" content="{{getDesc}}" />
     <meta name="title" property="og:title" content="{{userTitle}}" />
@@ -23,11 +28,6 @@
     <meta name="twitter:title" content="{{userTitle}}" />
     <meta name="twitter:image" content="{{ogImage}}" />
     <meta name="twitter:description" content="{{getDesc}}" />
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
 
     <!-- Favicon -->
     <link
@@ -275,23 +275,17 @@
 
                     <!--/ User Profile Content -->
 
-                    <div class="row">
+                    <div class="row" ng-if="cardDetails.bio">
                       <div class="col-12 card-padding" style="padding-bottom: 2.5rem !important;">
                         <div style="font-weight: 800; font-size: 1.5rem">
                           About Us
                         </div>
                         <div class="mt-3" style="text-align: justify;">
-                          {{ cardDetails.bio || 'Welcome to SwapnSnap ! Our NFC
-                          Digital Business Card will open a lot of doors for you
-                          in your professional as well as personal life. There
-                          is no better way to elevate your style quotient than
-                          this card. Showcase your work, validate your
-                          performance with photos and videos and make lasting
-                          connections with a simple tap that opens up your world
-                          on a microsite.' }}
+                          {{ cardDetails.bio }}
                         </div>
                       </div>
                     </div>
+                    
                     <div class="mb-4" style="display: flex; justify-content: center">
                       <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light">
                         <span class="ti-xs ti ti-star me-1"></span> <a href="https://biznfc.algofolks.com/" target="_blank" style="color: #fff !important;">Create Your Card</a>
