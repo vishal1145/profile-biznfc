@@ -48,11 +48,6 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
                 if (response.data.success) {
                     $scope.items = response.data.results;
                     console.log('Items:', $scope.items);
-                    $scope.items.forEach(function(item) {
-                        if (!item.value.startsWith('http://') && !item.value.startsWith('https://')) {
-                            item.value = 'http://' + item.value;
-                        }
-                    });
                 } else {
                     console.error('API response unsuccessful:', response.data);
                 }
@@ -60,6 +55,26 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
                 console.error('Error occurred:', error);
             });
     }
+
+    $scope.redirectTo = function(item) {
+    
+        if (!item.icon.preUrl || !item.value) {
+            console.error('Invalid base URL or path:', item.icon.preUrl, item.value);
+            return;
+        }
+    
+        try {
+            const baseUrl = item.icon.preUrl.endsWith('/') ? item.icon.preUrl : item.icon.preUrl + '/';
+            const path = item.value.startsWith('/') ? item.value.substring(1) : item.value;
+            const url = new URL(path, baseUrl);
+    
+            window.open(url.href, '_blank');
+        } catch (error) {
+            console.error('Failed to construct URL:', error);
+        }
+    };
+    
+    
 
     $scope.shareCard = function () {
         if (cardId) {
@@ -125,7 +140,6 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
                         var cardId = $scope.cardDetails.cardId;
                         console.log("cardId111", $scope.cardDetails);
     
-                        // Define variables within the callback
                         var cardName = $scope.cardDetails.fullName || 'Biznfc';
                         var designation = $scope.cardDetails.designation || '';
                         var company = $scope.cardDetails.organization || '';
@@ -138,20 +152,23 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
                                 var email = profileItems.email;
                                 var mobileNo = profileItems.phone;
                                 var website = profileItems.website;
+                                $scope.getCurrentUrl = function() {
+                                    return $location.absUrl();
+                                };
     
-                                // Create the vCard text content
                                 const textContent = 
 `BEGIN:VCARD
 VERSION:3.0
-N:${cardName};;;;
-FN:${cardName}
-TEL;TYPE=WORK:${mobileNo}
-EMAIL:${email}
-URL:${website}
-URL:${$scope.cardDetails.shareUrl}
-ORG:${company}
-TITLE:${designation}
-X-ABDATE:${formattedDate}
+N;CHARSET=utf-8:${cardName};;;;
+FN;CHARSET=utf-8:
+TEL;TYPE=Work:${mobileNo}
+EMAIL;INTERNET;TYPE=Email:${email}
+URL;TYPE=Website:${website}
+TEL;TYPE=Text:${mobileNo}
+URL;TYPE=Biznfc - Digital Business Card:${$scope.getCurrentUrl()}
+ORG;CHARSET=utf-8:${company}
+TITLE;CHARSET=utf-8:${designation}
+X-ABDATE;TYPE=Date connected via Biznfc:${formattedDate}
 END:VCARD`;
     
                                 // Create a blob and download the file
