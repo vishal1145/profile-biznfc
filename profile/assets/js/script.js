@@ -141,19 +141,18 @@ biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
     
                                 // Create the vCard text content
                                 const textContent = 
-    `BEGIN:VCARD
-    VERSION:3.0
-    N:${cardName};;;;
-    FN:${cardName}
-    TEL;TYPE=WORK:${mobileNo}
-    EMAIL:${email}
-    URL:${website}
-    URL:${$scope.cardDetails.shareUrl}
-    ORG:${company}
-    TITLE:${designation}
-    X-ABDATE:${formattedDate}
-    END:VCARD
-    `;
+`BEGIN:VCARD
+VERSION:3.0
+N:${cardName};;;;
+FN:${cardName}
+TEL;TYPE=WORK:${mobileNo}
+EMAIL:${email}
+URL:${website}
+URL:${$scope.cardDetails.shareUrl}
+ORG:${company}
+TITLE:${designation}
+X-ABDATE:${formattedDate}
+END:VCARD`;
     
                                 // Create a blob and download the file
                                 const blob = new Blob([textContent], { type: 'text/plain' });
