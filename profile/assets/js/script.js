@@ -2,7 +2,8 @@ var biznfcApp = angular.module("biznfcApp", []);
 
 biznfcApp.controller('biznfcController', function ($scope, $http, $location) {
     $scope.name = "Rahul Rishikesh";
-
+    $scope.currentYear = new Date().getFullYear();
+    
     var testCardUrl = "36YF0JglmYarbOaerROs";
 
     function getCardIdFromUrl() {
