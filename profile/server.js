@@ -53,6 +53,13 @@ app.get('/:cardurl', async (req, res) => {
 
           data = data.replace('{{ogImage}}', cardData.photoUrl);
           data = data.replace('{{ogImage}}', cardData.photoUrl);
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
+          data = data.replace('{{ogImage}}', cardData.photoUrl);
 
           data = data.replace('{{ogUrl}}', fullUrl)
 
