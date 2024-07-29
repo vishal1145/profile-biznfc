@@ -116,7 +116,7 @@
               </h4>
 
               <!-- Header -->
-              <div class="row">
+              <div class="row" ng-class="{'blur': isActive === 0}">
                 <div class="col-md-9">
                   <div class="card mb-4">
                     <div class="user-profile-header-banner">
@@ -270,35 +270,32 @@
                         </div>
                         
                         </div>
+                        <div class="row" ng-if="cardDetails.bio">
+                          <div class="col-12 card-padding" style="padding-bottom: 2.5rem !important;">
+                            <div style="font-weight: 800; font-size: 1.5rem">
+                              About Us
+                            </div>
+                            <div class="mt-3" style="text-align: justify;">
+                              {{ cardDetails.bio }}
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="mb-4" style="display: flex; justify-content: center; padding-bottom: 30px;">
+                          <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light">
+                            <span class="ti-xs ti ti-star me-1"></span> <a href="https://biznfc.algofolks.com/" target="_blank" style="color: #fff !important;">Create Your Card</a>
+                          </button>
+                        </div>
+                        <div style="display: flex; justify-content: center; width: 100%; position: fixed; bottom: 25px; left: 50%; transform: translate(-50%, -50%);">
+                          <small style="color: black !important; font-weight: 100; font-size: 11px;">
+                            © {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by <b style="margin-left: 3px;">BIZNFC</b>
+                          </small>
+                        </div>
                       </div>
                     </div>
 
                     <!--/ User Profile Content -->
-
-                    <div class="row" ng-if="cardDetails.bio">
-                      <div class="col-12 card-padding" style="padding-bottom: 2.5rem !important;">
-                        <div style="font-weight: 800; font-size: 1.5rem">
-                          About Us
-                        </div>
-                        <div class="mt-3" style="text-align: justify;">
-                          {{ cardDetails.bio }}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="mb-4" style="display: flex; justify-content: center">
-                      <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light">
-                        <span class="ti-xs ti ti-star me-1"></span> <a href="https://biznfc.algofolks.com/" target="_blank" style="color: #fff !important;">Create Your Card</a>
-                      </button>
-                    </div>
                   </div>
-                  </div>
-                  <div style="display: flex; justify-content: center;">
-                    <div style="display: flex; justify-content: center; position: fixed; bottom: 0px; width: 100%; background-color: white; padding: 10px;">
-                      <small style="color: black !important; font-weight: 100;">
-                        © {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by <b style="margin-left: 3px;">BIZNFC</b>
-                      </small>
-                    </div>
                   </div>
                 </div>
               </div>

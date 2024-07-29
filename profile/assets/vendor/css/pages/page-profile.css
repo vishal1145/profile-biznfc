@@ -33,3 +33,7 @@
     width: 100px;
   }
 }
+.blur {
+  filter: blur(5px);
+  pointer-events: none; /* To prevent interactions with blurred content */
+}
