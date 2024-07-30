@@ -127,6 +127,14 @@
               </h4>
 
               <!-- Header -->
+              <div class="blurred-image-overlay" ng-show="isActive === 0">
+                <img
+                  ng-src="{{'assets/icon/profile-security.png'}}"
+                  alt="Blurred overlay"
+                  class="blurred-image"
+                  style="height: 100px; width: 100px;"
+                />
+              </div>
               <div class="row" ng-class="{'blur': isActive === 0}">
                 <div class="col-md-9">
                   <div class="card mb-4">
