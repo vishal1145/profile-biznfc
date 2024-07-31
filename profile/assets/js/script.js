@@ -50,8 +50,10 @@ biznfcApp.controller("biznfcController", function ($scope, $http, $location) {
     $http.post("https://biznfc.net/getAllItemByCardId", payload).then(
       function (response) {
         if (response.data.success) {
-          $scope.items = response.data.results;
-          console.log("Items:", $scope.items);
+          $scope.items = response.data.results.filter(function (item) {
+            return item.isVisibled === 1;
+          });
+          console.log("Filtered Items:", $scope.items);
         } else {
           console.error("API response unsuccessful:", response.data);
         }
