@@ -107,6 +107,8 @@
   }
   .mobile-css {
     width: 175px;
+    height: 100px;
+    object-fit: contain;
   }
 }
 
