@@ -102,18 +102,17 @@ biznfcApp.controller("biznfcController", function ($scope, $http, $location) {
 
   function getProfileItemByCardId(cardId) {
     var payload = { cardId: cardId };
+  
     return $http
       .post("https://biznfc.net/getAllItemByCardId", payload)
       .then(function (response) {
         if (response.data.success) {
           var items = response.data.results;
-
+  
           var emailItem = items.find((item) => item.displayName === "Email");
           var phoneItem = items.find((item) => item.displayName === "Phone");
-          var websiteItem = items.find(
-            (item) => item.displayName === "Website"
-          );
-
+          var websiteItem = items.find((item) => item.displayName === "Website");
+  
           var email = emailItem
             ? emailItem.value.replace(/^https?:\/\//, "")
             : "";
@@ -123,8 +122,26 @@ biznfcApp.controller("biznfcController", function ($scope, $http, $location) {
           var website = websiteItem
             ? websiteItem.value.replace(/^https?:\/\//, "")
             : "";
-
-          return { email, phone, website };
+  
+          return $http
+            .post("https://biznfc.net/getCardById", { cardId: cardId })
+            .then(function (secondResponse) {
+              if (secondResponse.data.success) {
+                var secondData = secondResponse.data.results[0];
+                var photoBase64Url = secondData.photoBase64Url;
+  
+                return {
+                  email,
+                  phone,
+                  website,
+                  photoBase64Url,
+                };
+              } else {
+                return Promise.reject(
+                  "Error fetching card: " + secondResponse.data.message
+                );
+              }
+            });
         } else {
           return Promise.reject(
             "Error fetching items: " + response.data.message
@@ -135,7 +152,7 @@ biznfcApp.controller("biznfcController", function ($scope, $http, $location) {
         console.error("HTTP request error:", error);
         return Promise.reject(error);
       });
-  }
+  }  
 
   $scope.downloadTextFile = function () {
     if (requestData.url) {
@@ -144,7 +161,6 @@ biznfcApp.controller("biznfcController", function ($scope, $http, $location) {
           if (response.data.success) {
             $scope.cardDetails = response.data.results[0];
             var cardId = $scope.cardDetails.cardId;
-            console.log("cardId111", $scope.cardDetails);
 
             var cardName = $scope.cardDetails.fullName || "Biznfc";
             var designation = $scope.cardDetails.designation || "";
@@ -155,10 +171,10 @@ biznfcApp.controller("biznfcController", function ($scope, $http, $location) {
             if (cardId) {
               getProfileItemByCardId(cardId)
                 .then(function (profileItems) {
-                  // Use the returned email, phone, and website
                   var email = profileItems.email;
                   var mobileNo = profileItems.phone;
                   var website = profileItems.website;
+                  var photoBase64Url = profileItems.photoBase64Url;
                   $scope.getCurrentUrl = function () {
                     return $location.absUrl();
                   };
@@ -175,6 +191,7 @@ URL;TYPE=Biznfc - Digital Business Card:${$scope.getCurrentUrl()}
 ORG;CHARSET=utf-8:${company}
 TITLE;CHARSET=utf-8:${designation}
 X-ABDATE;TYPE=Date connected via Biznfc:${formattedDate}
+PHOTO;ENCODING=b;TYPE=JPEG:${photoBase64Url}
 END:VCARD`;
 
                   // Create a blob and download the file
