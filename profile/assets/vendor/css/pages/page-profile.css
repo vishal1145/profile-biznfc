@@ -55,3 +55,66 @@
   max-height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 767.98px) {
+  .user-profile-card  {
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 18px;
+    border: 1px solid;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .user-photo-margin {
+    margin-left: 0rem  !important;
+    display: flex;
+    margin-right: 0rem !important;
+    justify-content: space-between;
+  }
+  .remove-padding {
+    /* padding: 0 !important; */
+  }
+  .responsive-card {
+    display: block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 24px;
+  }
+  .mx-css {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .display-custom{
+    display: flex;
+  }
+  .justify-items{
+    justify-content: start !important;
+  }
+  .remove-mgr {
+    margin-bottom: 0 !important;
+    font-weight: 900;
+  }
+  .list-line {
+    margin: 0.7rem 0 !important;
+    color: black;
+  }
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  .mobile-css {
+    width: 200px;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .list-line {
+    display: none;
+  }
+  .mobile-css {
+    display: none;
+  }
+}
