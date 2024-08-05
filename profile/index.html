@@ -144,8 +144,8 @@
                         alt="Banner image"
                         class="rounded-top"
                         style="margin-top: 5px;
-                        border-top-left-radius: 5px !important;
-                        border-top-right-radius: 5px !important;"
+                        border-top-left-radius: 12px !important;
+                        border-top-right-radius: 12px !important;"
                       />
                     </div>
                     <div
@@ -308,16 +308,17 @@
                           </div>
                         </div>
                         
-                        <div class="mb-4" style="display: flex; justify-content: center; padding-bottom: 30px;">
+                        <div class="mb-4" style="display: flex; justify-content: center;">
                           <button type="button" class="btn rounded-pill btn-primary waves-effect waves-light">
                             <span class="ti-xs ti ti-star me-1"></span> <a href="https://biznfc.algofolks.com/" target="_blank" style="color: #fff !important;">Create Your Card</a>
                           </button>
                         </div>
-                        <div style="display: flex; justify-content: center; width: 100%; position: fixed; bottom: 25px; left: 50%; transform: translate(-50%, -50%);">
+                        <!-- <div style="display: flex; justify-content: center; width: 100%; position: fixed; bottom: 25px; left: 50%; transform: translate(-50%, -50%);">
                           <small style="color: black !important; font-weight: 100; font-size: 11px; background-color: #fff;">
                             © {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by <b style="margin-left: 3px;">BIZNFC</b>
                           </small>
-                        </div>
+                        </div> -->
+                        <footer class="flex flex-col items-center justify-between p-3 text-center sm:flex-row sm:px-6" style="display: flex; justify-content: center; position: sticky; bottom: 0px; background-color: #fff;"><p class="text-typo-secondary mb-2 py-2 text-sm dark:text-white sm:mb-0">© {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by BIZNFC.</p></footer>
                       </div>
                     </div>
 
