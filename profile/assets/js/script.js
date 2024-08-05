@@ -239,5 +239,29 @@ END:VCARD`;
       }
     );
   }
+
+  $scope.shareOnWhatsApp = function () {
+    if (!requestData || !requestData.url) {
+      console.error('Card URL is undefined');
+      return;
+    }
+    
+    const message = `Check out this Biznfc card: `;
+  
+    if (navigator.share) {
+      navigator.share({
+        title: 'Biznfc Card',
+        text: message,
+        url: '/cards/' + requestData.url
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      }).catch(err => {
+        console.error('Error sharing:', err);
+      });
+    } else {
+      // Fallback for browsers that do not support navigator.share
+      window.open(`https://wa.me/?text=${encodeURIComponent(message + ' ' + requestData.url)}`, '_blank');
+    }
+  };
   
 });
