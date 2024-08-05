@@ -30,7 +30,7 @@
     height: 150px;
   }
   .user-profile-header .user-profile-img {
-    width: 100px;
+    width: 120px;
   }
 }
 .blur {
@@ -78,11 +78,10 @@
     display: block;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     border: 1px solid #ddd;
-    border-radius: 0.25rem;
     padding: 1rem;
     margin-bottom: 1rem;
     background-color: #fff;
-    border-radius: 24px;
+    border-radius: 12px;
   }
   .mx-css {
     margin-right: 0 !important;
