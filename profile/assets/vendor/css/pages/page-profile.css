@@ -65,6 +65,14 @@
     margin-left: 6px;
     margin-right: 6px;
   }
+
+  .change-bg {
+    background-color: grey !important;
+  }
+  .changes-background {
+    background-color: grey !important;
+  }
+
   .user-photo-margin {
     margin-left: 0rem  !important;
     display: flex;
