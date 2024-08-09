@@ -73,6 +73,7 @@
   }
   .remove-padding {
     padding: 0 !important;
+    margin-top: 8px !important;
   }
   .responsive-card {
     display: block;
@@ -117,5 +118,10 @@
   }
   .mobile-css {
     display: none;
+  }
+
+  .remove-padding {
+    padding: 0 !important;
+    margin-top: 15px !important;
   }
 }

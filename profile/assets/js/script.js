@@ -247,7 +247,9 @@ END:VCARD`;
     }
     
     const message = `Check out this Biznfc card: `;
-  
+    $scope.getCurrentUrl = function () {
+      return $location.absUrl();
+    };  
     if (navigator.share) {
       navigator.share({
         title: 'Biznfc Card',
@@ -260,8 +262,42 @@ END:VCARD`;
       });
     } else {
       // Fallback for browsers that do not support navigator.share
-      window.open(`https://wa.me/?text=${encodeURIComponent(message + ' ' + requestData.url)}`, '_blank');
+      window.open(`https://wa.me/?text=${encodeURIComponent(message + ' ' +  $location.absUrl())}`, '_blank');
     }
   };
+
+  // var savedTheme = localStorage.getItem('templateCustomizer-vertical-menu-template--Style');
+  // $scope.selectedTheme = savedTheme ? savedTheme : 'light';
+
+  // $scope.applyTheme = function() {
+  //   console.log('Current theme:', $scope.selectedTheme);
+  // };
+
+  // $scope.setTheme = function(theme) {
+  //   var key = 'templateCustomizer-vertical-menu-template--Style';
+  //   localStorage.setItem(key, theme);
+  //   $scope.selectedTheme = theme;
+  //   $scope.loadSelectedTheme();
+  //   $scope.applyTheme();
+  // };
+
+  // $scope.loadSelectedTheme = function() {
+  //   var key = 'templateCustomizer-vertical-menu-template--Style';
+  //   var savedTheme = localStorage.getItem(key);
+
+  //   if (savedTheme) {
+  //     $scope.selectedTheme = savedTheme;
+  //     $window.location.reload();
+  //   } else {
+  //     $scope.selectedTheme = 'light';
+  //   }
+  //   $scope.applyTheme();
+  // };
+
+  // $scope.init = function() {
+  //   $scope.applyTheme();
+  // };
+
+  // $scope.init();
   
 });
