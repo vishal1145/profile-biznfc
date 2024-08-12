@@ -78,6 +78,7 @@
     display: flex;
     margin-right: 0rem !important;
     justify-content: space-between;
+    align-items: center;
   }
   .remove-padding {
     padding: 8px !important;
@@ -114,8 +115,8 @@
     text-transform: uppercase;
   }
   .mobile-css {
-    width: 175px;
-    height: 100px;
+    width: 150px;
+    height: 90px;
     object-fit: contain;
   }
 }
