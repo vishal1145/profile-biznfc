@@ -156,17 +156,18 @@
                     <div
                       class="responsive-card user-profile-card user-profile-header d-flex flex-column flex-sm-row text-sm-start text-center mb-4"
                     >
-                      <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto user-photo-margin">
-                        <div ng-if="cardDetails.photoUrl">
+                      <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto user-photo-margin justify-content-space-between">
+                        <div>
                           <img
+                            ng-if="cardDetails.photoUrl"
                             ng-src="{{ cardDetails.photoUrl }}"
                             alt="user image"
                             class="d-block h-auto ms-0 ms-sm-4 rounded user-profile-img"
                             style="height: 120px !important; object-fit: cover; border-radius: 12px !important;"
                           />
                         </div>
-                        <div ng-if="cardDetails.logoUrl">
-                          <img ng-src="{{ cardDetails.logoUrl }}" class="mobile-css" alt="logo-img">
+                        <div>
+                          <img ng-if="cardDetails.logoUrl" ng-src="{{ cardDetails.logoUrl }}" class="mobile-css" alt="logo-img">
                         </div>
                       </div>
                       <div class="flex-grow-1 mt-3 mt-sm-5">
