@@ -162,4 +162,7 @@
   background-color: #ffffff;
   color: rgba(47, 51, 73, 0.95) !important;;
 }
+#addressBarContainer {
+  transition: opacity 0.3s ease;
+}
 
