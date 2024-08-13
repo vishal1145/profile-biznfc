@@ -379,10 +379,10 @@
                             © {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by <b style="margin-left: 3px;">BIZNFC</b>
                           </small>
                         </div> -->
-                        <footer class="flex flex-col items-center justify-between text-center sm:flex-row sm:px-6" style="display: flex; justify-content: center; position: sticky; bottom: 0px; background-color: #fff;">
+                        <footer id="footer" class="hidden-footer flex flex-col items-center justify-between text-center sm:flex-row sm:px-6" style="display: flex; justify-content: center; position: sticky; bottom: 0px; background-color: #fff;">
                           <p class="text-typo-secondary mb-0 py-0 text-sm dark:text-white sm:mb-0">
                             © {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by 
-                            <a href="https://biznfc.algofolks.com/" target="_blank"  style="cursor: pointer;">
+                            <a href="https://biznfc.algofolks.com/" target="_blank" style="cursor: pointer;">
                               <img
                                 ng-src="{{'assets/icon/qr_banner.svg'}}"
                                 alt="Avatar"
@@ -391,7 +391,7 @@
                               />
                             </a>
                           </p>
-                        </footer>
+                        </footer>                        
                         
                       </div>
                     </div>
@@ -421,6 +421,17 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+     <script>
+      window.addEventListener('scroll', function() {
+        const footer = document.getElementById('footer');
+        if (window.scrollY > 100) { // Adjust the value '100' as needed
+          footer.classList.add('show-footer');
+        } else {
+          footer.classList.remove('show-footer');
+        }
+      });
+
+     </script>
 
     <script src="assets/vendor/libs/jquery/jquery.js"></script>
     <script src="assets/vendor/libs/popper/popper.js"></script>
