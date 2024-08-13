@@ -131,7 +131,35 @@
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-
 .show-footer {
   opacity: 1;
 }
+.theme-container {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme {
+  background-color: rgba(47, 51, 73, 0.95) !important;
+  color: #ffffff;
+}
+
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+.theme-container.scrolled .footer {
+  display: flex;
+}
+.footer-dark-theme {
+  background: rgba(47, 51, 73, 0.95) !important;
+}
+.dark-paragraph {
+  background-color:rgba(47, 51, 73, 0.95) !important;;
+  color: #ffffff;
+}
+
+.light-paragraph {
+  background-color: #ffffff;
+  color: rgba(47, 51, 73, 0.95) !important;;
+}
+

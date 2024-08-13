@@ -142,19 +142,22 @@
               </div>
               <div class="row" ng-class="{'blur': isActive === 0}">
                 <div class="col-md-9 remove-padding">
-                  <div class="card mb-2">
+                  <div class="card mb-2 theme-container" ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}">
                     <div class="user-profile-header-banner changes-background">
+                      <div style="position: absolute; top: 10px; right: 10px;">
+                        <i class="fa" ng-class="{'ti ti-moon': isDarkTheme, 'ti ti-sun': !isDarkTheme}" ng-click="toggleTheme()"></i>
+                      </div>                      
                       <img
                         ng-src="{{ cardDetails.coverImageUrl || 'assets/img/pages/profile-banner.png' }}"
                         alt="Banner image"
                         class="rounded-top"
-                        style="
-                        border-top-left-radius: 16px !important;
-                        border-top-right-radius: 16px !important;"
+                        style="width: 100%; border-top-left-radius: 16px !important; border-top-right-radius: 16px !important;"
                       />
                     </div>
+                    
                     <div
-                      class="responsive-card user-profile-card user-profile-header d-flex flex-column flex-sm-row text-sm-start text-center mb-4"
+                      class="responsive-card theme-container user-profile-card user-profile-header d-flex flex-column flex-sm-row text-sm-start text-center mb-4"
+                      ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}"
                     >
                       <div class="flex-shrink-0 mt-n2 mx-sm-0 mx-auto user-photo-margin justify-content-space-between">
                         <div>
@@ -379,8 +382,10 @@
                             © {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by <b style="margin-left: 3px;">BIZNFC</b>
                           </small>
                         </div> -->
-                        <footer id="footer" class="hidden-footer flex flex-col items-center justify-between text-center sm:flex-row sm:px-6" style="display: flex; justify-content: center; position: sticky; bottom: 0px; background-color: #fff;">
-                          <p class="text-typo-secondary mb-0 py-0 text-sm dark:text-white sm:mb-0">
+                        <footer id="footer" class="hidden-footer flex flex-col items-center justify-between text-center sm:flex-row sm:px-6" 
+                                ng-class="{'dark-footer': isDarkTheme, 'light-footer': !isDarkTheme}" 
+                                style="display: flex; justify-content: center; position: sticky; bottom: 0px;">
+                          <p ng-class="{'dark-paragraph': isDarkTheme, 'light-paragraph': !isDarkTheme}" class="text-typo-secondary mb-0 py-0 text-sm dark:text-white sm:mb-0">
                             © {{ currentYear }} {{ cardDetails.fullName }}. All Rights Reserved. Powered by 
                             <a href="https://biznfc.algofolks.com/" target="_blank" style="cursor: pointer;">
                               <img
@@ -391,7 +396,7 @@
                               />
                             </a>
                           </p>
-                        </footer>                        
+                        </footer>
                         
                       </div>
                     </div>

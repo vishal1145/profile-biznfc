@@ -1,8 +1,30 @@
 var biznfcApp = angular.module("biznfcApp", []);
 
-biznfcApp.controller("biznfcController", function ($scope, $http, $location) {
+biznfcApp.controller("biznfcController", function ($scope, $http, $window, $location) {
   $scope.name = "Rahul Rishikesh";
   $scope.currentYear = new Date().getFullYear();
+  $scope.isDarkTheme = false;
+
+  $scope.toggleTheme = function() {
+    $scope.isDarkTheme = !$scope.isDarkTheme;
+    if ($scope.isDarkTheme) {
+      document.body.classList.add('dark-theme');
+      document.body.classList.add('footer-dark-theme');
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+    }
+  };
+
+  angular.element($window).bind("scroll", function() {
+    if ($window.pageYOffset > 0) {
+      angular.element('.theme-container').addClass('scrolled');
+    } else {
+      angular.element('.theme-container').removeClass('scrolled');
+    }
+    $scope.$apply();
+  });
 
   var testCardUrl = "36YF0JglmYarbOaerROs";
 
