@@ -182,7 +182,7 @@
                               <h4 class="remove-mgr text-uppercase" ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}">{{ cardDetails.fullName }}</h4>
                             </div>
                             <hr class="list-line"></hr>
-                            <div id="addressBarContainer">
+                            <div>
                               <ul
                               class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-2 justify-items"
                             >
@@ -439,27 +439,6 @@
       });
 
      </script>
-
-      <script>
-        function hideAddressBar() {
-            window.scrollTo(0, 1);
-        }
-
-        window.addEventListener('load', hideAddressBar);
-
-        window.addEventListener('scroll', function() {
-            const addressBarContainer = document.getElementById('addressBarContainer');
-            if (window.scrollY > 10) {
-                addressBarContainer.style.opacity = '1';
-                window.removeEventListener('scroll', arguments.callee);
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const addressBarContainer = document.getElementById('addressBarContainer');
-            addressBarContainer.style.opacity = '0';
-        });
-      </script>
 
     <script src="assets/vendor/libs/jquery/jquery.js"></script>
     <script src="assets/vendor/libs/popper/popper.js"></script>
