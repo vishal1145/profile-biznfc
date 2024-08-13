@@ -13420,7 +13420,7 @@ html:not([dir=rtl]) .card .card-separator {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #a5a3ae !important;
+  /* color: #a5a3ae !important; */
 }
 
 .text-black-50 {

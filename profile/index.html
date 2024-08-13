@@ -179,7 +179,7 @@
                         >
                           <div class="user-profile-info">
                             <div class="display-custom">
-                              <h4 class="remove-mgr text-uppercase">{{ cardDetails.fullName }}</h4>
+                              <h4 class="remove-mgr text-uppercase" ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}">{{ cardDetails.fullName }}</h4>
                             </div>
                             <hr class="list-line"></hr>
                             <div>
@@ -240,8 +240,8 @@
                     <div class="row">
                       <div class="col-md-12 mt-2">
                         <div class="card-action mb-4" style="padding: 30px; padding-bottom: 0px !important">
-                          <div class="align-items-center">
-                            <h5 class="card-action-title mb-0">
+                          <div class="display-custom">
+                            <h5 class="card-action-title mb-0" ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}">
                               Connect with me
                             </h5>
                             <div class="card-action-element mt-3">
@@ -294,7 +294,8 @@
                                                                 class="text-muted"
                                                                 ng-click="redirectTo(item)"
                                                                 target="_blank"
-                                                                style="cursor: pointer; font-weight: 500; color: #5d596c !important;"
+                                                                style="cursor: pointer; font-weight: 500;"
+                                                                ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}"
                                                             >
                                                                 {{item.displayName}}
                                                             </a>
@@ -370,7 +371,8 @@
                           </ul>
                           <div>
                             <div type="button" class="btn rounded-pill waves-effect waves-light" ng-click="shareOnWhatsApp()" style="border-radius: 6px !important;">
-                              <span class="ti-xs ti ti-share me-1"></span>
+                              <span class="ti-xs ti ti-share me-1" ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}"
+                              ></span>
                             </div>
                           </div>
                         </div>

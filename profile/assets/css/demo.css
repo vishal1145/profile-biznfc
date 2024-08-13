@@ -140,7 +140,7 @@
 
 .dark-theme {
   background-color: rgba(47, 51, 73, 0.95) !important;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .light-theme {
