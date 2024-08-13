@@ -145,7 +145,7 @@
                   <div class="card mb-2 theme-container" ng-class="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}">
                     <div class="user-profile-header-banner changes-background">
                       <div style="position: absolute; top: 10px; right: 10px;">
-                        <i class="fa" ng-class="{'ti ti-moon': isDarkTheme, 'ti ti-sun': !isDarkTheme}" ng-click="toggleTheme()"></i>
+                        <i class="ti" ng-class="{'ti-moon': isDarkTheme, 'ti-sun': !isDarkTheme}" ng-click="toggleTheme()" style="font-size: 30px;"></i>
                       </div>                      
                       <img
                         ng-src="{{ cardDetails.coverImageUrl || 'assets/img/pages/profile-banner.png' }}"
